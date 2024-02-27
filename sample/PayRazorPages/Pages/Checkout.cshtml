@@ -1,0 +1,67 @@
+﻿@page
+@model CheckoutModel
+@{
+}
+<div class="row">
+	<div class="col-md-6">
+	@if (Model.FormFields==null)
+	{
+		<form method="post">
+			<fieldset>
+				<legend>Completeaza datele pentru facturare</legend>
+				<div class="form-floating mb-3">
+					<select asp-for="Address.Type" class="form-select">
+						<option value="person">Persoana Fizica</option>
+						<option value="company">Persoana juridica</option>
+					</select>
+					<label class="form-label">Tip cumparator:</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" asp-for="Address.FirstName" class="form-control" placeholder="Prenume"/>
+					<label id="labelFirstName" class="form-label">Prenume</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" asp-for="Address.LastName" class="form-control" placeholder="Nume"/>
+					<label id="labelLastName" class="form-label">Nume</label>
+				</div>
+				<div class="form-floating mb-3">
+					<textarea asp-for="Address.AddressLine" class="form-control" placeholder="Adresa (strada, nr...)" style="height: 100px"></textarea>
+					<label>Adresa (strada, nr...)</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" asp-for="Address.County" class="form-control" placeholder="Judet/Sector"/>
+					<label>Judet/Sector</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" asp-for="Address.City" class="form-control" placeholder="Localitate"/>
+					<label>Localitate</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" asp-for="Address.Email" class="form-control" placeholder="Email"/>
+					<label>E-mail</label>
+				</div>
+				<div class="form-floating mb-3">
+					<input type="text" asp-for="Address.MobilPhone" class="form-control" placeholder="Telefon"/>
+					<label>Telefon</label>
+				</div>
+
+
+			</fieldset>
+			<button type="submit" class="btn btn-primary">Plateste</button>
+		</form>
+	}
+	else
+	{
+		<form id="NetopiaForm" name="NetopiaForm" action="@Model.UrlMobilPay" method="post">
+			@foreach (var item in Model.FormFields)
+			{
+				<input type="hidden" name="@item.Key" value="@item.Value" />
+			}
+			<button type="submit" class="btn btn-primary">Pay now</button>
+		</form>
+		<script type="text/javascript">
+			window.setTimeout(document.getElementById("NetopiaForm").submit(), 500);
+		</script>
+	}
+	</div>
+</div>
