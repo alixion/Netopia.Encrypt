@@ -4,6 +4,17 @@
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <FileVersion>1.0.0.0</FileVersion>
+        <Version>1.0.0</Version>
+        <Authors>Alex Manea</Authors>
+        <Description>Encryption and decryption for Netopia payment transactions</Description>
+        <PackageLicenseUrl>https://github.com/alixion/Netopia.Encrypt/blob/master/LICENSE</PackageLicenseUrl>
+        <PackageProjectUrl>https://github.com/alixion/Netopia.Encrypt</PackageProjectUrl>
+        <PackageTags>Netopia Mobilpay encrypt decrypt</PackageTags>
+        <NeutralLanguage>en-US</NeutralLanguage>
+        <GeneratePackageOnBuild Condition="'$(Configuration)' == 'Release'">true</GeneratePackageOnBuild>
     </PropertyGroup>
 
 </Project>
