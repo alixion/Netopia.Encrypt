@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{01F50EF7-966D-477E-B598-B8D095F4B4AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Netopia.Encrypt", "src\Netopia.Encrypt\Netopia.Encrypt.csproj", "{D14BC7D1-C778-4B3B-9AF0-E5EB935D9B94}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{9664D112-9060-4A93-A3BA-A8652AD68D88}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D14BC7D1-C778-4B3B-9AF0-E5EB935D9B94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D14BC7D1-C778-4B3B-9AF0-E5EB935D9B94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D14BC7D1-C778-4B3B-9AF0-E5EB935D9B94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D14BC7D1-C778-4B3B-9AF0-E5EB935D9B94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D14BC7D1-C778-4B3B-9AF0-E5EB935D9B94} = {01F50EF7-966D-477E-B598-B8D095F4B4AC}
+	EndGlobalSection
+EndGlobal
