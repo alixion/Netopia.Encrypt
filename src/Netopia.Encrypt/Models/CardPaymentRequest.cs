@@ -1,5 +1,7 @@
 ﻿namespace Netopia.Encrypt.Models;
 
+[XmlRoot("order")]
+[Serializable]
 public class CardPaymentRequest: PaymentRequestBase
 {
     [XmlArrayItem("destination")]
