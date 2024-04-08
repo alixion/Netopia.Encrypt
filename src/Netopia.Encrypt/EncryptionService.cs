@@ -60,10 +60,13 @@ public class EncryptionService<T> where T: PaymentRequestBase
     
     public void Decrypt()
     {
-        var collection = new X509Certificate2Collection();
-        collection.Import(File.ReadAllBytes(_privateKeyFilePath));
-        var cert = collection[0];
-        var csp = cert.GetRSAPrivateKey();
+        var privateKeyText = File.ReadAllText(_privateKeyFilePath);
+        var privateKeyBlocks = privateKeyText.Split("-", StringSplitOptions.RemoveEmptyEntries);
+        var privateKeyBytes = Convert.FromBase64String(privateKeyBlocks[1]);
+            
+        var csp = RSA.Create();
+        csp.ImportPkcs8PrivateKey(privateKeyBytes, out _);
+        
         if (csp == null)
             throw new Exception($"Could not load private key from path {_privateKeyFilePath}");
         
